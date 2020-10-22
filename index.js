@@ -7,7 +7,9 @@ const Battleship = {
     return { name, shipCount, gameBoard }
   },
   boardFactory: function (shipCount) {
-    const gameBoard = JSON.parse(JSON.stringify(Array(shipCount).fill(Array(shipCount).fill(0))))
+    const gameBoard = JSON.parse(
+      JSON.stringify(Array(shipCount).fill(Array(shipCount).fill(0)))
+    )
     const randomCoordinates = { x: 0, y: 0 }
     let addedShipCount = 0
 
@@ -36,7 +38,9 @@ const Battleship = {
     while (!losingPlayer) {
       const nextPlayer = players[currentPlayer + 1] ? currentPlayer + 1 : 0
 
-      const response = prompt(`${players[currentPlayer].name}: Pick a location to strike! x,y`)
+      const response = prompt(
+        `${players[currentPlayer].name}: Pick a location to strike! x,y`
+      )
 
       const coordinates = { x: response.charAt(0), y: response.charAt(2) }
       const { x, y } = coordinates
